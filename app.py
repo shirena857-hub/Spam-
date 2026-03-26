@@ -54,14 +54,6 @@ def send_friend_request(uid, token, results):
 def spam():
     # API Owner: @senkucodex
     uid = request.args.get("uid")
-    key = request.args.get("key")
-    
-    # Key validation by @senkucodex
-    if key != "Senku":
-        return jsonify({
-            "error": "Invalid or missing key 🔐",
-            "owner": "@senkucodex"
-        }), 401
     
     if not uid:
         return jsonify({
